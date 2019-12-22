@@ -45,7 +45,12 @@ int main() {
             printf("\n");
         }
         do {
-            readTapper(GPIO27,GPIO22, morseBuffer);
+            if (difficultyLevel == 1 || difficultyLevel == 2) {
+                readTapper(GPIO27,GPIO22, morseBuffer);
+            }
+            else {
+                readTapperWord(GPIO27,GPIO22, morseBuffer, strlen(wordToType));
+            }
         } while (strlen(morseBuffer) == 0);
         
         if (strcmp(morseBuffer,".......")==0) {
@@ -62,6 +67,6 @@ int main() {
         i++;
     }
     printf("Thanks for using Amina's Morse tapper simulator!\n");
-    
+
     return 0;
 }

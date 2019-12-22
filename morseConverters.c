@@ -266,7 +266,7 @@ void toMorseLetter(const char symbol, char* morseLetter) {
 	}
 }
 
-int toMorse(const char* input, char* output) {
+int toMorse(char* input, char* output) {
 	int i = 0;
 	int j = 0;
 	char morseLetter[100] = { '\0' };
@@ -288,7 +288,7 @@ int toMorse(const char* input, char* output) {
 }
 
 // morse input is like: '--- ... ----.' each letter separated from another with ' '
-void fromMorse(const char* input, char* output) {
+void fromMorse(char* input, char* output) {
 	int i = 0;
 	int j = 0;
 	int k = 0;
