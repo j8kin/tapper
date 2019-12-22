@@ -6,7 +6,7 @@ const char* const morseDict[] = {
 };
 const int sizeOfMorseDict = 7;
 
-void morseWordToType(int dificultyLevel, char *wordToType, char* expectMorse) {
+void morseWordToType(int dificultyLevel, char* wordToType, char* expectMorse) {
 	int index = 0;
 	if (dificultyLevel == 1 || dificultyLevel == 2) {
 		index = (int)(((double)rand() / RAND_MAX) * 35);

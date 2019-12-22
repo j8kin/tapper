@@ -1,8 +1,7 @@
+#include <stdio.h>
 #include <sys/time.h>
 #include <wiringPi.h>
 #include "readTapper.h"
-
-#define NULL 0L
 
 void readTapper(int dotPin, int dashPin, char* morse) {
     int execute = 1;
@@ -24,10 +23,12 @@ void readTapper(int dotPin, int dashPin, char* morse) {
         if (curDotKeyPressed == 1) {
             prevTime = curTime;
             morse[i++] = '.';
+            printf(".\n");
         }
         if (curDashKeyPressed == 1) {
             prevTime = curTime;
             morse[i++] = '-';
+            printf("-\n");
         }
         if (curTime - prevTime > 2000) {
             execute = 0;
