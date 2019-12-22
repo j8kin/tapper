@@ -1,3 +1,4 @@
+#include <string.h>
 #include "morseConverters.h"
 
 char fromMorseLetter(const char* morseLetter) {
@@ -112,7 +113,7 @@ char fromMorseLetter(const char* morseLetter) {
 	return ' ';
 }
 
-char toMorseLetter(const char symbol, char* morseLetter) {
+void toMorseLetter(const char symbol, char* morseLetter) {
 	switch (symbol) {
 	case 'a':
 		memcpy(morseLetter, ".-",2);
@@ -258,6 +259,10 @@ char toMorseLetter(const char symbol, char* morseLetter) {
 		memcpy(morseLetter, "-----",5);
 		morseLetter[5] = '\0';
 		break;
+
+	default:
+		morseLetter[0]='\0';
+		break;
 	}
 }
 
@@ -288,7 +293,7 @@ void fromMorse(const char* input, char* output) {
 	int j = 0;
 	int k = 0;
 	char morseLetter[10];
-	char letter = ' ';
+	
 	while (input[i] != '\0') {
 		j = 0;
 		while (input[i] != ' ' || input[i] != '\0') {

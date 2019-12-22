@@ -4,7 +4,7 @@
 const char* const morseDict[] = { 
 	"apple", "one", "two", "at", "word", "four", "five"
 };
-const sizeOfMorseDict = 7;
+const int sizeOfMorseDict = 7;
 
 void morseWordToType(int dificultyLevel, char *wordToType, char* expectMorse) {
 	int index = 0;

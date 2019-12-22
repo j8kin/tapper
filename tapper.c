@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <wiringPi.h>
 #include "WpioGpio.h"
+#include "readTapper.h"
 
 int main() {
     printf("Amina's tapper simulator. RaspberryPi\n");
