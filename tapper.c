@@ -5,17 +5,23 @@
 #include "readTapper.h"
 
 int main() {
+    char morseBuffer[100];
+
     printf("Amina's tapper simulator. RaspberryPi\n");
     wiringPiSetup () ;
 
     pinMode(GPIO17, OUTPUT);
     pinMode(GPIO27, INPUT);
     pinMode(GPIO22, INPUT);
+    printf("Enter difficulty level (one dot level 1, 4 dots - level 4): ");
+    readTapper(GPIO27,GPIO22, morseBuffer);
+    printf("%s", morseBuffer);
     
+    /*
     int i = 0;
     int j = 0;
     char morseLetter[256] ="\0";
-    int cSymbol = 0;;
+    int cSymbol = 0;
     while(1) {
         if (j == 5) {
             digitalWrite(GPIO17, HIGH); // delay(500);
@@ -65,6 +71,6 @@ int main() {
         }
         delay(100); // 10Hz
     }
-
+    */
     return 0;
 }
